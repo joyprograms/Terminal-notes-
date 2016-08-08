@@ -1,0 +1,251 @@
+# Terminal-notes-
+
+ Last login: Wed Aug  3 15:21:21 on ttys000
+Guests-Air:~ guest$ java
+Usage: java [-options] class [args...]
+           (to execute a class)
+   or  java [-options] -jar jarfile [args...]
+           (to execute a jar file)
+where options include:
+    -d32	  use a 32-bit data model if available
+    -d64	  use a 64-bit data model if available
+    -server	  to select the "server" VM
+                  The default VM is server,
+                  because you are running on a server-class machine.
+
+
+    -cp <class search path of directories and zip/jar files>
+    -classpath <class search path of directories and zip/jar files>
+                  A : separated list of directories, JAR archives,
+                  and ZIP archives to search for class files.
+    -D<name>=<value>
+                  set a system property
+    -verbose:[class|gc|jni]
+                  enable verbose output
+    -version      print product version and exit
+    -version:<value>
+                  Warning: this feature is deprecated and will be removed
+                  in a future release.
+                  require the specified version to run
+    -showversion  print product version and continue
+    -jre-restrict-search | -no-jre-restrict-search
+                  Warning: this feature is deprecated and will be removed
+                  in a future release.
+                  include/exclude user private JREs in the version search
+    -? -help      print this help message
+    -X            print help on non-standard options
+    -ea[:<packagename>...|:<classname>]
+    -enableassertions[:<packagename>...|:<classname>]
+                  enable assertions with specified granularity
+    -da[:<packagename>...|:<classname>]
+    -disableassertions[:<packagename>...|:<classname>]
+                  disable assertions with specified granularity
+    -esa | -enablesystemassertions
+                  enable system assertions
+    -dsa | -disablesystemassertions
+                  disable system assertions
+    -agentlib:<libname>[=<options>]
+                  load native agent library <libname>, e.g. -agentlib:hprof
+                  see also, -agentlib:jdwp=help and -agentlib:hprof=help
+    -agentpath:<pathname>[=<options>]
+                  load native agent library by full pathname
+    -javaagent:<jarpath>[=<options>]
+                  load Java programming language agent, see java.lang.instrument
+    -splash:<imagepath>
+                  show splash screen with specified image
+See http://www.oracle.com/technetwork/java/javase/documentation/index.html for more details.
+Guests-Air:~ guest$ java Main
+Guests-Air:~ guest$ ls
+Applications	Documents	Library		Music		Public
+Desktop		Downloads	Movies		Pictures	code
+Guests-Air:~ guest$ git status
+fatal: Not a git repository (or any of the parent directories): .git
+Guests-Air:~ guest$ ls
+Applications	Documents	Library		Music		Public
+Desktop		Downloads	Movies		Pictures	code
+Guests-Air:~ guest$ cd code/
+Guests-Air:code guest$ ls
+ATM			ATM 2			TextAdventure		hello-git-exercise
+Guests-Air:code guest$ cd ATM
+Guests-Air:ATM guest$ ls
+ATM.iml	out	src
+Guests-Air:ATM guest$ git status
+fatal: Not a git repository (or any of the parent directories): .git
+Guests-Air:ATM guest$ ls -a
+.	..	.idea	ATM.iml	out	src
+Guests-Air:ATM guest$ cd ..
+Guests-Air:code guest$ ls
+ATM			ATM 2			TextAdventure		hello-git-exercise
+Guests-Air:code guest$ pwd
+/Users/guest/code
+Guests-Air:code guest$ git clone https://github.com/joyprograms/JoyTestRepo.git
+Cloning into 'JoyTestRepo'...
+remote: Counting objects: 3, done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+Checking connectivity... done.
+Guests-Air:code guest$ ls
+ATM			JoyTestRepo		hello-git-exercise
+ATM 2			TextAdventure
+Guests-Air:code guest$ cd JoyTestRepo/
+Guests-Air:JoyTestRepo guest$ pwd
+/Users/guest/code/JoyTestRepo
+Guests-Air:JoyTestRepo guest$ ls
+README.md
+Guests-Air:JoyTestRepo guest$ cat README.md 
+# JoyTestRepo
+This repo exists to test Joy's work patterns.
+Guests-Air:JoyTestRepo guest$ ls
+README.md
+Guests-Air:JoyTestRepo guest$ ls
+JoyTestRepo.iml	README.md	src
+Guests-Air:JoyTestRepo guest$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	new file:   JoyTestRepo.iml
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	.idea/
+	src/
+
+Guests-Air:JoyTestRepo guest$ git add .
+Guests-Air:JoyTestRepo guest$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	new file:   .idea/compiler.xml
+	new file:   .idea/copyright/profiles_settings.xml
+	new file:   .idea/description.html
+	new file:   .idea/misc.xml
+	new file:   .idea/modules.xml
+	new file:   .idea/project-template.xml
+	new file:   .idea/vcs.xml
+	new file:   .idea/workspace.xml
+	new file:   JoyTestRepo.iml
+	new file:   src/com/theironyard/charlotte/Main.java
+
+Guests-Air:JoyTestRepo guest$ git commit -m "Adding a sample test java project to our repository"
+[master 4275a6e] Adding a sample test java project to our repository
+ 10 files changed, 276 insertions(+)
+ create mode 100644 .idea/compiler.xml
+ create mode 100644 .idea/copyright/profiles_settings.xml
+ create mode 100644 .idea/description.html
+ create mode 100644 .idea/misc.xml
+ create mode 100644 .idea/modules.xml
+ create mode 100644 .idea/project-template.xml
+ create mode 100644 .idea/vcs.xml
+ create mode 100644 .idea/workspace.xml
+ create mode 100644 JoyTestRepo.iml
+ create mode 100644 src/com/theironyard/charlotte/Main.java
+Guests-Air:JoyTestRepo guest$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+nothing to commit, working tree clean
+Guests-Air:JoyTestRepo guest$ git push
+Username for 'https://github.com': joyprograms
+Password for 'https://joyprograms@github.com': 
+Guests-Air:JoyTestRepo guest$ 
+Guests-Air:JoyTestRepo guest$ 
+Guests-Air:JoyTestRepo guest$ 
+Guests-Air:JoyTestRepo guest$ git push
+Username for 'https://github.com': joyprograms
+Password for 'https://joyprograms@github.com': 
+Counting objects: 18, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (13/13), done.
+Writing objects: 100% (18/18), 4.69 KiB | 0 bytes/s, done.
+Total 18 (delta 0), reused 0 (delta 0)
+To https://github.com/joyprograms/JoyTestRepo.git
+   8064921..4275a6e  master -> master
+Guests-Air:JoyTestRepo guest$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+nothing to commit, working tree clean
+Guests-Air:JoyTestRepo guest$ ls
+JoyTestRepo.iml	README.md	src
+Guests-Air:JoyTestRepo guest$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   .idea/workspace.xml
+
+no changes added to commit (use "git add" and/or "git commit -a")
+Guests-Air:JoyTestRepo guest$ git reset --hard
+HEAD is now at 4275a6e Adding a sample test java project to our repository
+Guests-Air:JoyTestRepo guest$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+nothing to commit, working tree clean
+Guests-Air:JoyTestRepo guest$ s
+-bash: s: command not found
+Guests-Air:JoyTestRepo guest$ ls
+JoyTestRepo.iml	README.md	src
+Guests-Air:JoyTestRepo guest$ pwd
+/Users/guest/code/JoyTestRepo
+Guests-Air:JoyTestRepo guest$ cd ..
+Guests-Air:code guest$ ls
+ATM			JoyTestRepo		TextAdventure
+ATM 2			Review			hello-git-exercise
+Guests-Air:code guest$ cd ATM 2
+Guests-Air:ATM guest$ ls
+ATM.iml	out	src
+Guests-Air:ATM guest$ pwd
+/Users/guest/code/ATM
+Guests-Air:ATM guest$ cd ..
+Guests-Air:code guest$ ls
+ATM			JoyTestRepo		TextAdventure
+ATM 2			Review			hello-git-exercise
+Guests-Air:code guest$ cd ATM
+ATM/   ATM 2/ 
+Guests-Air:code guest$ cd ATM
+ATM/   ATM 2/ 
+Guests-Air:code guest$ cd ATM
+ATM/   ATM 2/ 
+Guests-Air:code guest$ cd ATM\ 2/
+Guests-Air:ATM 2 guest$ ls
+Review.iml	out		src
+Guests-Air:ATM 2 guest$ pwd
+/Users/guest/code/ATM 2
+Guests-Air:ATM 2 guest$ ls src/
+Main.java	Person.java
+Guests-Air:ATM 2 guest$ ls
+Review.iml	out		src
+Guests-Air:ATM 2 guest$ s
+-bash: s: command not found
+Guests-Air:ATM 2 guest$ ls
+Review.iml	out		src
+Guests-Air:ATM 2 guest$ git status
+fatal: Not a git repository (or any of the parent directories): .git
+Guests-Air:ATM 2 guest$ ls
+Review.iml	out		src
+Guests-Air:ATM 2 guest$ cat Review.iml 
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../Review" />
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>Guests-Air:ATM 2 guest$ ls
+Review.iml	out		src
+Guests-Air:ATM 2 guest$ cd ..
+Guests-Air:code guest$ ls
+ATM			JoyTestRepo		TextAdventure
+ATM 2			Review			hello-git-exercise
+Guests-Air:code guest$ 
