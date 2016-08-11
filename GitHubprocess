@@ -54,26 +54,12 @@ where options include:
     -splash:<imagepath>
                   show splash screen with specified image
 See http://www.oracle.com/technetwork/java/javase/documentation/index.html for more details.
-Guests-Air:~ guest$ java Main
-Guests-Air:~ guest$ ls
-Applications	Documents	Library		Music		Public
-Desktop		Downloads	Movies		Pictures	code
-Guests-Air:~ guest$ git status
-fatal: Not a git repository (or any of the parent directories): .git
+
+
 Guests-Air:~ guest$ ls
 Applications	Documents	Library		Music		Public
 Desktop		Downloads	Movies		Pictures	code
 Guests-Air:~ guest$ cd code/
-Guests-Air:code guest$ ls
-ATM			ATM 2			TextAdventure		hello-git-exercise
-Guests-Air:code guest$ cd ATM
-Guests-Air:ATM guest$ ls
-ATM.iml	out	src
-Guests-Air:ATM guest$ git status
-fatal: Not a git repository (or any of the parent directories): .git
-Guests-Air:ATM guest$ ls -a
-.	..	.idea	ATM.iml	out	src
-Guests-Air:ATM guest$ cd ..
 Guests-Air:code guest$ ls
 ATM			ATM 2			TextAdventure		hello-git-exercise
 Guests-Air:code guest$ pwd
